@@ -1,0 +1,28 @@
+micronaut:
+  server:
+    cors:
+      enabled: true
+      configurations:
+        web:
+          allowedOrigins:
+            - http://localhost:3000
+  application:
+    name: quizApp
+
+datasources:
+  default:
+    url: jdbc:mysql://localhost:3306/quiz
+    username: root
+    password: azeqsd
+    driverClassName: com.mysql.cj.jdbc.Driver
+
+jpa:
+  default:
+    entity-scan:
+      packages:
+        - 'org.johan.infrastructure.dataAccess.entities'
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+        show_sql: true
